@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Link Shortener</title>
+  <style>
+    /* Basic Reset */
+    body, h1, p, input, button {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Container Styling */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header Styling */
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #0073e6;
+    }
+
+    /* Form Styling */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background: #0073e6;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background: #005bb5;
+    }
+
+    /* Result Styling */
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    /* Ad Styling */
+    .ad-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Adsterra Banner Ad (Top) -->
+    <div class="ad-container">
+      <!-- Replace this with your Adsterra banner ad code -->
+      <script type="text/javascript">
+	atOptions = {
+		'key' : '8c7ed03466f923a42f8ca3c0d70ea44f',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/8c7ed03466f923a42f8ca3c0d70ea44f/invoke.js"></script>
+      <!-- Adsterra Banner Ad Code -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <!-- Link Shortener Tool -->
+    <h1>Free Link Shortener</h1>
+    <div class="form-group">
+      <label for="url">Enter your long URL:</label>
+      <input type="url" id="url" placeholder="https://example.com" required>
+    </div>
+    <div class="form-group">
+      <button onclick="shortenUrl()">Shorten URL</button>
+    </div>
+    <div id="result"></div>
+
+    <!-- Adsterra Banner Ad (Bottom) -->
+    <div class="ad-container">
+      <!-- Replace this with your Adsterra banner ad code -->
+      <script type="text/javascript">
+	atOptions = {
+		'key' : '09d26c67cac85ad88a6dc242879032bf',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09d26c67cac85ad88a6dc242879032bf/invoke.js"></script>
+      <!-- Adsterra Banner Ad Code -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 Free Link Shortener. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Link Shortener Logic
+    function shortenUrl() {
+      const longUrl = document.getElementById('url').value;
+      if (!longUrl) {
+        alert('Please enter a valid URL.');
+        return;
+      }
+
+      // Use a free URL shortening API (e.g., TinyURL)
+      fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`)
+        .then(response => response.text())
+        .then(shortUrl => {
+          document.getElementById('result').innerHTML = `
+            <p>Shortened URL: <a href="${shortUrl}" target="_blank">${shortUrl}</a></p>
+          `;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Failed to shorten URL. Please try again.');
+        });
+    }
+  </script>
+</body>
+</html>
